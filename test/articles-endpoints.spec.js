@@ -151,7 +151,7 @@ describe('Articles Endpoints', function() {
         requiredFields.forEach(field => {
             const newArticle = {
                 title: 'Test new article',
-                styel: 'Listicle',
+                style: 'Listicle',
                 content: 'Test new article content...'
             }
 
@@ -168,7 +168,7 @@ describe('Articles Endpoints', function() {
         })
 
         it('removes XSS attack content from response', () => {
-            const {maliciousArticle, expectedArticle } = makeMaliciousArticle()
+            const { maliciousArticle, expectedArticle } = makeMaliciousArticle()
             return supertest(app)
                 .post(`/articles`)
                 .send(maliciousArticle)
